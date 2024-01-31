@@ -1,0 +1,477 @@
+.main-content {
+    font-family: 'Be Vietnam Pro' !important;
+    max-width  : 600px;
+    margin     : auto;
+    p {
+        margin-bottom: 0;
+    }
+
+
+    .banner {
+        // padding-top    : 110px;
+        background     : url(../../../assets/tet/banner2.png) no-repeat;
+        text-align     : center;
+        background-size: cover;
+
+        .header {
+            height: 60px;
+
+            .box-logo {
+                height         : 60px;
+                display        : flex;
+                align-items    : center;
+                justify-content: center;
+
+                img {
+                    width: 240px;
+
+                }
+            }
+        }
+
+        .container {
+            padding: 0;
+        }
+
+        .mo-the {
+            max-width : 225px;
+            margin-top: 110px;
+        }
+
+        .box-button {
+            margin-top: 25px;
+
+            button {
+                border-radius : 100px;
+                background    : var(--color-content-neutral-strong, #171717);
+                font-size     : 14px;
+                font-style    : normal;
+                font-weight   : 600;
+                line-height   : 20px;
+                letter-spacing: -0.28px;
+                color         : #fff;
+                height        : 40px;
+                line-height   : 100%;
+                padding       : 0 20px;
+                border        : 0;
+            }
+        }
+
+        .banner-card {
+            width     : 100%;
+            margin-top: 29px;
+        }
+    }
+
+    .box-content {
+        border-radius: var(--24, 24px) var(--24, 24px) 0px 0px;
+        background   : var(--color-bg-canvas, #F8F8F8);
+        margin-top   : -44px;
+        position     : relative;
+        z-index      : 2;
+
+        .item {
+            border-radius   : var(--24, 24px);
+            box-shadow      : 0px 4px 40px 0px rgba(0, 0, 0, 0.04);
+            margin-top      : 24px;
+            background-color: #fff;
+            position        : relative;
+
+            .box-button {
+                bottom    : 0;
+                left      : 0;
+                right     : 0;
+                text-align: right;
+                position  : absolute;
+                padding   : 0 20px 20px 0;
+
+                button {
+                    display         : inline-block;
+                    border          : 0;
+                    outline         : none;
+                    background-color: transparent;
+
+                    img {
+                        width: 24px;
+                    }
+                }
+
+                &.text {
+                    text-align: center;
+
+                    button {
+                        height        : 36px;
+                        padding       : 0 10px;
+                        border-radius : 2323px;
+                        background    : var(--color-bg-surface, #FFF);
+                        color         : var(--color-content-neutral-strong, #171717);
+                        font-size     : 14px;
+                        font-style    : normal;
+                        font-weight   : 600;
+                        line-height   : 24px;
+                        /* 171.429% */
+                        letter-spacing: -0.14px;
+
+                        &.img {
+                            padding     : 6px;
+                            margin-right: -6px;
+                            position    : relative;
+                            z-index     : 2;
+                        }
+
+                        &.btn-text {
+                            // margin-left: -10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .box-text {
+            padding: 30px;
+
+            .title {
+                color         : #1A1A1A;
+                font-size     : 38px;
+                font-style    : normal;
+                font-weight   : 600;
+                line-height   : 46px;
+                letter-spacing: -0.76px;
+                position      : relative;
+
+                &.canhan {
+                    img {
+                        // position: absolute;
+                        position: relative;
+                        right   : 0px;
+                        bottom  : 8px;
+                        width   : 36px;
+                    }
+                }
+
+                &.hanmuc {
+                    span {
+                        background     : url(../../../assets/tet/100-trieu.png) no-repeat;
+                        background-size: 100% 100%;
+                        display        : inline-block;
+                        padding        : 0 10px
+                    }
+
+                    img {
+                        position: absolute;
+                        bottom  : -20px;
+                        left    : 60px;
+                        width   : 37px;
+                    }
+                }
+
+                &.quatang {
+                    span {
+                        position: relative;
+
+                        img {
+                            position: absolute;
+
+                            &.img1 {
+                                width: 21px;
+                                right: -15px;
+                                top  : -7px;
+                            }
+
+                            &.img2 {
+                                width : 101px;
+                                left  : 5px;
+                                bottom: -10px;
+                            }
+                        }
+                    }
+                }
+
+                .percent {
+                    position: relative;
+
+                    img {
+                        position: absolute;
+                        width   : 82px;
+                        left    : -3px;
+                        top     : -4px;
+                    }
+                }
+
+                .cccd {
+                    position: relative;
+
+                    img {
+                        position: absolute;
+                        width   : 110px;
+                        left    : 3px;
+                        bottom  : -4px;
+                    }
+                }
+
+                .zero {
+                    position: relative;
+                    display : inline-block;
+
+                    .img1 {
+                        position: absolute;
+                        right   : -26px;
+                        bottom  : -3px;
+                        width   : 21px;
+                    }
+
+                    .img2 {
+                        position: absolute;
+                        bottom  : -8px;
+                        left    : 2px;
+                        width   : 36px;
+                    }
+                }
+
+                .free {
+                    position: relative;
+
+                    img {
+                        position: absolute;
+                        right   : -65px
+                    }
+                }
+
+                &.buy {
+                    position: relative;
+                    z-index : 2;
+
+                    span {
+                        position: relative;
+                    }
+
+                    img {
+                        position: absolute;
+
+                        &.img1 {
+                            top    : 20px;
+                            right  : -2px;
+                            width  : 80px;
+                            z-index: -1;
+                        }
+
+                        &.img2 {
+                            width : 20px;
+                            bottom: -24px;
+                            right : 20px;
+                        }
+                    }
+                }
+
+                .uudai {
+                    position: relative;
+                    z-index : 2;
+
+                    img {
+                        position: absolute;
+
+                        &.img1 {
+                            // left: 0px
+                            width: 44px;
+                            left : 35px;
+                            top  : -40px;
+                        }
+
+                        &.img2 {
+                            left   : -19px;
+                            top    : -18px;
+                            z-index: -1;
+                        }
+                    }
+                }
+            }
+
+            .des {
+                color         : var(--color-content-neutral-medium, #858585);
+                font-size     : 18px;
+                font-style    : normal;
+                font-weight   : 500;
+                line-height   : 24px;
+                letter-spacing: -0.36px;
+                margin-top    : 12px;
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+
+    }
+
+    .footer {
+        background     : url(../../../assets/tet/bg-footer.png) no-repeat;
+        background-size: 100% 100%;
+        border-radius  : 30px 30px 0 0;
+        text-align     : center;
+        padding        : 60px;
+        padding-bottom : 120px;
+        background-color: #F8F8F8;
+
+        .img-footer {
+            width: 180px;
+        }
+
+        .email {
+            color        : #fff;
+            margin-top   : 24px;
+            margin-bottom: 0;
+        }
+
+        .copy {
+            color     : #fff;
+            margin-top: 6px;
+        }
+    }
+
+    .lp-button {
+        position          : fixed;
+        bottom            : 0;
+        right             : 0;
+        left              : 0;
+        padding           : 16px 20px 24px 20px;
+        background-color  : #fff;
+        text-align        : center;
+        z-index           : 9;
+
+        button {
+            color         : var(--color-content-on-accent, #FFF);
+            font-size     : 16px;
+            font-style    : normal;
+            font-weight   : 600;
+            line-height   : 24px;
+            letter-spacing: -0.32px;
+            border-radius : 8px;
+            background    : linear-gradient(0deg, var(--color-bg-neutral, #171717) 0%, var(--color-bg-neutral, #171717) 100%), var(--color-bg-neutral, #171717);
+            width         : 100%;
+            height        : 52px;
+            line-height   : 52px;
+            text-align    : center;
+            border        : 0;
+        }
+    }
+}
+
+.modal-dialog {
+    max-width: 600px;
+    margin: 0 auto;
+    .modal-content {
+        background-color: #F8F8F8;
+        border: 0;
+        // min-height: 100vh;
+
+        .modal-header {
+            position: relative;
+            padding : 28px 20px 12px 20px;
+            border  : 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background-color: #fff;
+
+            h4 {
+                width         : 100%;
+                text-align    : left;
+                color         : var(--color-content-neutral-strong, #171717);
+                font-size     : 24px;
+                font-style    : normal;
+                font-weight   : 600;
+                line-height   : 32px;
+                letter-spacing: -0.48px;
+            }
+
+            button {
+                position: absolute;
+                right   : 20px;
+                top     : 20px;
+                opacity : 1;
+            }
+        }
+
+        .modal-body {
+            min-height: calc(100vh -  148px);
+            padding-top: 92px;
+            padding-bottom: 96px;
+            .item {
+                margin-top: 20px;
+                &:first-child {
+                    margin-top: 0;
+                }
+                img {
+                    width        : 100%;
+                    border-radius: 10px 10px 0 0;
+                }
+    
+                .box-text {
+                    padding         : 20px;
+                    background-color: #fff;
+                    border-radius   : 0 0 10px 10px;
+    
+                    p,
+                    li {
+                        margin-bottom : 0;
+                        color         : var(--color-content-neutral-medium, #858585);
+                        font-size     : 12px;
+                        font-style    : normal;
+                        font-weight   : 400;
+                        line-height   : 16px;
+                        letter-spacing: -0.24px;
+                        &.text {
+                            margin-bottom: 6px;
+                        }
+                    }
+                    ul {
+                        padding-left: 18px;
+                        margin-bottom: 0;
+                        li {
+                            line-height: 20px;
+                        }
+                    }
+    
+                    .title {
+                        color         : var(--color-content-neutral-strong, #171717);
+                        font-size     : 14px;
+                        font-style    : normal;
+                        font-weight   : 600;
+                        line-height   : 20px;
+                        letter-spacing: -0.28px;
+                        margin-bottom: 8px;
+                    }
+                }
+            }
+        }
+
+        .modal-footer {
+            border: 0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #fff;
+            z-index: 999;
+            button {
+                border-radius : 8px;
+                background    : linear-gradient(0deg, var(--color-bg-neutral, #171717) 0%, var(--color-bg-neutral, #171717) 100%), var(--color-bg-neutral, #171717);
+                color         : var(--color-content-on-accent, #FFF);
+                font-size     : 16px;
+                font-style    : normal;
+                font-weight   : 600;
+                line-height   : 24px;
+                letter-spacing: -0.32px;
+                height        : 52px;
+                line-height   : 100%;
+                width         : 100%;
+                text-align    : center;
+                border        : 0;
+                margin: 0;
+            }
+            
+        }
+    }
+}

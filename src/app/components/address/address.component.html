@@ -1,0 +1,29 @@
+<div class="popup-address">
+    <div class="header">
+        <p class="title-popup">{{title}}</p>
+        <img (click)="close()" class="h5 close-icon-province" src="../../../assets/jv1/icon-close.svg" alt="close icon"/>
+    </div>
+    <div>
+        <div>
+            <div class="box-search">
+                <img src="../../../assets/jv1/search.svg" alt="">
+                <input
+                    placeholder="Tìm kiếm"
+                    class="mat-filter-input input-search"
+                    matInput
+                    autocomplete="off"
+                    [formControl]="keySearch"
+                    (keydown)="$event.stopPropagation()"
+                >
+            </div>
+            <div class="noResultsMessage" *ngIf="listSearch.length === 0">
+                {{titleSearch}}
+            </div>
+        </div>
+        <mat-list role="list">
+            <mat-option class="item-option" *ngFor="let item of listSearch" role="listitem" (click)="chooseValue(item?.id)">
+                {{item?.name}}
+            </mat-option>
+        </mat-list>
+    </div>
+</div>

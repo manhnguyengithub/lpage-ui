@@ -1,0 +1,165 @@
+variables:
+  ENVIRONMENT: ""
+  CI_EVENT: "development"
+  VERSION: "latest"
+  RELEASE_VERSION: ""
+  GIT_DEPTH: 0
+  SONAR_BRANCH_NAME: "root"
+  SSH_SERVER_IP: "192.168.20.72"
+
+cache:
+    key: $CI_COMMIT_REF_SLUG
+    paths:
+        - .npm/
+        - node_modules/
+
+workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      variables:
+        CI_EVENT: "merge_request_event"
+        SONAR_BRANCH_NAME: "$CI_MERGE_REQUEST_TARGET_BRANCH_NAME|$CI_MERGE_REQUEST_SOURCE_BRANCH_NAME"
+    - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH =~ /^feature/
+      variables:
+        CI_EVENT: "dev_commit"
+        ENVIRONMENT: "dev"
+        SONAR_BRANCH_NAME: $CI_COMMIT_BRANCH
+    - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH =~ /^develop.*/
+      variables:
+        CI_EVENT: "sit_commit"
+        ENVIRONMENT: "qa"
+        SONAR_BRANCH_NAME: $CI_COMMIT_BRANCH
+        SSH_SERVER_IP: "192.168.20.73"
+    - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH =~ /^release/
+      variables:
+        CI_EVENT: "release_package"
+        ENVIRONMENT: "release"
+        BRANCH_NAME: $CI_COMMIT_BRANCH
+        SSH_SERVER_IP: $UAT_SERVER_IP
+    - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH =~ /^hotfix/
+      variables:
+        CI_EVENT: "hotfix_package"
+        ENVIRONMENT: "hotfix"
+        SONAR_BRANCH_NAME: $CI_COMMIT_BRANCH
+        SSH_SERVER_IP: $UAT_SERVER_IP
+    - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == "master"
+      variables:
+        CI_EVENT: "production_package"
+        ENVIRONMENT: "v"
+        SONAR_BRANCH_NAME: $CI_COMMIT_BRANCH
+    - when: always
+
+stages:
+  - verify
+  - merge_open
+#  - sonarqube
+  - build
+  - setversion
+  - package
+  - deploy
+
+
+ci_verify:
+  image: node:16.20-slim
+  stage: verify
+  script:
+    - npm install
+
+ci_merge_open:
+  image: node:16.20-slim
+  stage: merge_open
+  before_script:
+    - apt-get update -qq
+    - apt-get install -qq git
+    - git config --global user.email "bontk@thinhtientech.com"
+    - git config --global user.name "bontk"
+  script:
+    - GIT_SSL_CAINFO=cert/3tit.vn.crt git pull origin $CI_MERGE_REQUEST_TARGET_BRANCH_NAME
+    - npm install
+  rules:
+    - if: $CI_EVENT == "merge_request_event"
+
+#sonarqube:
+#  image: sonarsource/sonar-scanner-cli
+#  stage: sonarqube
+#  before_script:
+#    - git config --global user.email "bontk@thinhtientech.com"
+#    - git config --global user.name "bontk"
+#  script:
+#    - if [ "$CI_EVENT" == "merge_request_event" ]; then GIT_SSL_CAINFO=.mvn/rsoft.vn.crt git pull origin $CI_MERGE_REQUEST_TARGET_BRANCH_NAME; fi
+#    - sonar-scanner -Dsonar.sources=. -Dsonar.projectKey=$CI_PROJECT_NAME -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN -Dsonar.branch.name=$SONAR_BRANCH_NAME
+#  rules:
+#    - if: ($CI_EVENT == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "develop") || $CI_EVENT == "sit_commit" || $CI_EVENT == "dev_commit" || $CI_EVENT == "release_package" || $CI_EVENT == "production_package"
+
+ci_build:
+  image: node:16.20-slim
+  stage: build
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - dist/*
+  rules:
+    - if: $CI_EVENT == "dev_commit" || $CI_EVENT == "sit_commit" || $CI_EVENT == "release_package" || $CI_EVENT == "hotfix_package" || $CI_EVENT == "production_package"
+
+ci_setversion:
+  stage: setversion
+  script:
+    - >
+      delimiter="#";
+      s=$CI_COMMIT_MESSAGE$delimiter;
+      my_array=();
+      while [[ $s ]];
+      do
+      my_array+=( "${s%%"$delimiter"*}" );
+      s=${s#*"$delimiter"};
+      done;
+      Version=${my_array[1]};
+    - if [ "$CI_EVENT" == "dev_commit" ]; then VERSION="$CI_COMMIT_SHORT_SHA"; fi
+    - if [ "$CI_EVENT" == "sit_commit" ]; then VERSION="$CI_COMMIT_SHORT_SHA"; fi
+    - if [ "$CI_EVENT" == "release_package" ]; then VERSION="$Version"; fi
+    - if [ "$CI_EVENT" == "hotfix_package" ]; then VERSION="$Version"; fi
+    - if [ "$CI_EVENT" == "production_package" ]; then VERSION="$Version"; fi
+    - echo "BUILD_VERSION=$VERSION" >> build.env
+  artifacts:
+    reports:
+      dotenv: build.env
+  rules:
+    - if: $CI_EVENT == "dev_commit" || $CI_EVENT == "sit_commit" || $CI_EVENT == "release_package" || $CI_EVENT == "hotfix_package" || $CI_EVENT == "production_package"
+
+ci_package:
+  image: docker:stable
+  services:
+    - docker:stable-dind
+  variables:
+    DOCKER_TLS_CERTDIR: "/certs"
+  stage: package
+  script:
+    - echo "docker image build $CI_REGISTRY_IMAGE:$ENVIRONMENT.$BUILD_VERSION"
+    - apk add --no-cache bash python3
+    - docker login -u gitlab+deploy-token-2 -p hbL2e32F7n9bixsKNZmy registry.3tit.vn
+    - docker build -t $CI_REGISTRY_IMAGE:$ENVIRONMENT.$BUILD_VERSION .
+    - docker push $CI_REGISTRY_IMAGE:$ENVIRONMENT.$BUILD_VERSION
+  needs: [ci_setversion, ci_build]
+  rules:
+    - if: $CI_EVENT == "dev_commit" || $CI_EVENT == "sit_commit" || $CI_EVENT == "release_package" || $CI_EVENT == "hotfix_package" || $CI_EVENT == "production_package"
+
+
+ci_deploy:
+  stage: deploy
+  before_script:
+    - apt-get update -y && apt install openssh-client bash -y
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$SSH_PRIVATE_KEY")
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan -H $SSH_SERVER_IP >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  script:
+    - sed -i "s/{VERSION}/$ENVIRONMENT.$BUILD_VERSION/g" docker-compose.yml
+    - scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r docker-compose.yml root@$SSH_SERVER_IP:/root/builder/edp-ui/lpage-ui/
+    - scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r .angular/env.$ENVIRONMENT.js root@$SSH_SERVER_IP:/root/builder/edp-ui/lpage-ui/env.js
+    - ssh root@$SSH_SERVER_IP 'SETTINGS_TIMESTAMP=$(date +%s) docker stack deploy -c /root/builder/edp-ui/lpage-ui/docker-compose.yml edp-lpage-ui --with-registry-auth'
+  rules:
+    - if: $CI_EVENT == "dev_commit" || $CI_EVENT == "sit_commit"

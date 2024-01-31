@@ -1,0 +1,29 @@
+<div class="kt-portlet popup-pdf-view">
+    <div class="kt-portlet__head text-right">
+        <button class="btn-close" (click)="close()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <div class="document-container">
+        <pdf-viewer
+                [src]="source"
+                [render-text]="true"
+                [original-size]="false"
+                (after-load-complete)="loadComplete()"
+                class="pdf-view">
+        </pdf-viewer>
+    </div>
+<!--    <div class="dialog-footer">-->
+<!--        <div class="dialog-footer-content">-->
+<!--            <button mat-raised-button class="btn-navigate" (click)="prev()">-->
+<!--                <mat-icon>keyboard_arrow_left</mat-icon>-->
+<!--            </button>-->
+<!--            <button mat-stroked-button class="paginator">-->
+<!--                {{sourceIndex + 1}} / {{url.length}}-->
+<!--            </button>-->
+<!--            <button mat-raised-button class="btn-navigate" (click)="next()">-->
+<!--                <mat-icon>keyboard_arrow_right</mat-icon>-->
+<!--            </button>-->
+<!--        </div>-->
+<!--    </div>-->
+</div>

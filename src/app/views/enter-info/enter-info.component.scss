@@ -1,0 +1,82 @@
+.paso-home {
+    max-width: 600px;
+    margin   : auto;
+
+    * {
+        font-family: 'SVN-Gilroy', sans-serif;
+    }
+
+    .header {
+        background-color: #fff;
+        height          : 60px;
+        padding         : 18px 0;
+
+        .box-logo {
+            display        : flex;
+            align-items    : center;
+            justify-content: center;
+
+            .box-img {
+                height: 24px;
+
+                &:first-child {
+                    margin-right: 26px;
+                    position    : relative;
+
+                    img {
+                        height: 20px;
+                    }
+
+                    &::after {
+                        content   : "";
+                        height    : 24px;
+                        position  : absolute;
+                        background: var(--color-border-neutral-medium, #DBDBDB);
+                        width     : 1px;
+                        right     : -13px;
+                        top       : 0;
+                        display   : inline-block;
+                    }
+                }
+            }
+        }
+    }
+
+    .main-page {
+        background : #F6F6F6;
+        min-height : calc(100vh - 140px);
+        padding-top: 40px;
+
+        .title {
+            font-size              : 28px;
+            font-style             : normal;
+            font-weight            : 700;
+            line-height            : 30px;
+            letter-spacing         : -0.56px;
+            background             : linear-gradient(90deg, #1D4289 0%, #00B74F 100%);
+            background-clip        : text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    .footer {
+        background-color: #fff;
+        padding         : 12px 20px 20px 20px;
+
+        button {
+            border-radius: var(--corner-radius-Small, 8px);
+            background   : linear-gradient(0deg, #00B74F 0%, #00B74F 100%), #00B74F;
+            color        : #FFF;
+            font-size    : 16px;
+            font-style   : normal;
+            font-weight  : 700;
+            width        : 100%;
+            height       : 48px;
+            line-height  : 48px;
+            border       : 0;
+            outline      : none;
+            cursor       : pointer;
+        }
+    }
+}

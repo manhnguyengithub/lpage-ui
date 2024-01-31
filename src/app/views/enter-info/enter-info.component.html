@@ -1,0 +1,46 @@
+<div class="paso-home">
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="box-logo">
+                        <div class="box-img">
+                            <img src="../../../assets/jv1/Logo.svg" alt="">
+                        </div>
+                        <div class="box-img">
+                            <img src="../../../assets/jv1/logo-vp.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="content">
+                        <p class="title">
+                            Nhập thông tin của bạn
+                        </p>
+                        <div class="mb-3">
+                            <form [formGroup]="dataForm">
+                                <app-template *ngFor="let field of currentListField"
+                                              [data]="field"
+                                              [form]="dataForm"
+                                              [fieldControlForm]="dataForm.get(field.fieldKey)"
+                                              [listProvince]="listProvince"
+                                ></app-template>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <button class="" [disabled]="!dataForm.valid" (click)="nextStep()">
+            {{info?.button ?? 'Xác nhận'}}
+        </button>
+    </div>
+</div>

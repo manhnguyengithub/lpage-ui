@@ -1,0 +1,699 @@
+<div class="group-content">
+    <app-header-paso></app-header-paso>
+    <div class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <img class="hoan-tien" src="../../../assets/jv1/mothe.png" alt="">
+                </div>
+                <div class="col-12 text-center">
+                    <button class="btn-banner" (click)="openCard()">
+                        Mở thẻ ngay
+                    </button>
+                </div>
+            </div>
+        </div>
+        <img class="banner-card" src="../../../assets/jv1/banner-card.png" alt="">
+    </div>
+    <div class="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="box-feature">
+                        <div class="item">
+                            <img class="img-icon" src="../../../assets/jv1/icon-han-muc.svg" alt="">
+                            <p class="title">
+                                Hạn mức lên<br> đến 100 triệu
+                            </p>
+                            <p class="des">
+                                Không cần chứng minh thu nhập
+                            </p>
+                            <p class="text-center btn-text">
+                                <button data-toggle="modal" data-target="#myModal1">
+                                    <img src="../../../assets/jv1/icon-plus.svg" alt="">
+                                    Tìm hiểu thêm
+                                </button>
+                            </p>
+                        </div>
+                        <div class="item qua-tang">
+                            <img class="img-icon" src="../../../assets/jv1/icon-qua-tang.svg" alt="">
+                            <p class="title white">
+                                Quà tặng<br>
+                                lên tới 400K
+                            </p>
+                            <p class="des white">
+                                Chỉ dành cho 200 khách hàng<br> mở thẻ đầu tiên trong ngày
+                            </p>
+                            <img class="img-item" src="../../../assets/jv1/qua-tang.png" alt="">
+                            <div class="box-btn">
+                                <button data-toggle="modal" data-target="#myModal2">
+                                    <img src="../../../assets/jv1/icon-plus.svg" alt="">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="item mo-the">
+                            <img class="img-icon" src="../../../assets/jv1/icon-mo-the.svg" alt="">
+                            <p class="title">
+                                Mở thẻ Online<br>
+                                chỉ với CCCD
+                            </p>
+                            <p class="des">
+                                Phê duyệt nhanh trong 5 phút,<br>
+                                sử dụng được thẻ ngay
+                            </p>
+                        </div>
+                        <div class="item hoan-tien">
+                            <img class="img-icon" src="../../../assets/jv1/icon-hoan-tien.svg" alt="">
+                            <p class="title white">
+                                Hoàn tiền chi <br>tiêu lên tới 15%
+                            </p>
+                            <p class="des white">
+                                Hoàn tiền tối đa 24 triệu/năm
+                            </p>
+
+                            <div class="box-btn" data-toggle="modal" data-target="#myModal3">
+                                <button>
+                                    <img src="../../../assets/jv1/plus-white.svg" alt="">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="item mien-phi">
+                            <img class="img-icon" src="../../../assets/jv1/icon-mien-phi.png" alt="">
+                            <p class="title">
+                                Miễn phí<br> thường niên
+                            </p>
+                            <p class="des">
+                                Cho năm đầu tiên và ưu đãi<br> với những năm tiếp theo
+                            </p>
+
+                            <div class="box-btn">
+                                <button data-toggle="modal" data-target="#myModal4">
+                                    <img src="../../../assets/jv1/icon-plus.svg" alt="">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="item tra-gop">
+                            <img class="img-icon" src="../../../assets/jv1/icon-tra-gop1.png" alt="">
+                            <p class="title white">
+                                Trả góp 0%<br>
+                                trả trước 0đ
+                            </p>
+                            <p class="des white">
+                                Kỳ hạn linh hoạt tới 48 tháng
+                            </p>
+
+                            <div class="box-btn">
+                                <button data-toggle="modal" data-target="#myModal5">
+                                    <img src="../../../assets/jv1/icon-plus.svg" alt="">
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="item uu-dai">
+                            <img class="img-icon" src="../../../assets/jv1/icon-uu-dai.svg" alt="">
+                            <p class="title">
+                                Ưu đãi giảm<br> giá lên tới 30%
+                            </p>
+                            <p class="des">
+                                Tại hơn 5,000 đối tác cửa hàng<br> ăn uống, du lịch, mua sắm, giải trí
+                            </p>
+                            <img style="width: 100%;margin-top: 40px;" src="../../../assets/jv1/uu-dai-partner.png"
+                                alt="">
+                            <img style="width: 80%;margin: auto;margin-top: 20px;" src="../../../assets/jv1/uu-dai.PNG"
+                                alt="">
+                            <div class="box-btn">
+                                <button data-toggle="modal" data-target="#myModal6">
+                                    <img src="../../../assets/jv1/icon-plus.svg" alt="">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="item mua-sam">
+                            <img class="img-icon" src="../../../assets/jv1/icon-mua-sam.svg" alt="">
+                            <p class="title white">
+                                Mua sắm trước<br>thanh toán sau
+                            </p>
+                            <p class="des white">
+                                Miễn phí lãi lên tới 45 ngày
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <img src="../../../assets/jv1/Logo.svg" alt="">
+                    <p class="email">Email liên hệ: cskh@senid.vn</p>
+                    <p class="copy">© 2023 - Bản quyền thuộc về Công ty Cổ Phần Công Nghệ Paso</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box-button" *ngIf="showFloatingButton">
+        <button (click)="openCard()">
+            Mở thẻ ngay
+        </button>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="myModal1" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <img src="../../../assets/jv1/icon-close.svg" alt="">
+                </button>
+                <h4 class="modal-title">Hạn mức thẻ tín dụng</h4>
+            </div>
+            <div class="modal-body">
+                <div class="item">
+                    <div class="box-img">
+                        <img src="../../../assets/jv1/card-han-muc.png" alt="">
+                    </div>
+                    <div class="box-text">
+                        <p class="text-bold">Mở thẻ nhanh chóng chỉ với 5 bước đơn giản</p>
+                        <p class="text">
+                            Dựa vào lịch sử tín dụng và thông tin bạn cung cấp VPBank sẽ cấp hạn mức tín dụng phù hợp
+                            cho bạn.
+                            Hạn mức tín dụng từ 10 tới 100 triệu đồng.
+                        </p>
+                        <p class="text">
+                            Phê duyệt thẻ và trả kết quả nhanh chóng chỉ trong vòng 5 phút.
+                        </p>
+                        <p class="text">
+                            Kích hoạt thẻ online và dùng được ngay.
+                        </p>
+                        <p class="text">
+                            Để mở nhanh thẻ tín dụng VPBank bạn chỉ cần chuẩn bị CCCD gắn chip và làm theo các bước:
+                        </p>
+                        <ul>
+                            <li>Bước 1: Điền thông tin cá nhân và xác thực OTP</li>
+                            <li>Bước 2: Thực hiện EKYC</li>
+                            <li>Bước 3: Chọn thẻ theo nhu cầu</li>
+                            <li>Bước 4: Ký hợp đồng điện tử</li>
+                            <li>Bước 5: Kích hoạt thẻ ảo, sử dụng được ngay</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button (click)="openCard()">
+                    Mở thẻ ngay
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="myModal2" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <img src="../../../assets/jv1/icon-close.svg" alt="">
+                </button>
+                <h4 class="modal-title">Quà tặng chào mừng</h4>
+            </div>
+            <div class="modal-body">
+                <div class="item">
+                    <div class="box-img">
+                        <img src="../../../assets/jv1/card-stepup.png" alt="">
+                    </div>
+                    <div class="box-text">
+                        <p class="text-bold">Thẻ tín dụng VPBank StepUp Mastercard</p>
+                        <p class="text">
+                            Hoàn tiền 300.000 VNĐ cho khách hàng mở thẻ tín dụng VPBank StepUp trong khoảng thời gian
+                            triển khai chương trình và đạt tổng doanh số giao dịch từ 2 triệu VND trở lên trong 30 ngày
+                            mở thẻ.
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="box-img">
+                        <img src="../../../assets/jv1/card-jcb.png" alt="">
+                    </div>
+                    <div class="box-text">
+                        <p class="text-bold">Thẻ tín dụng VPBank Z JCB</p>
+                        <p class="text">
+                            Hoàn tiền 300.000 VND cho khách hàng mở thẻ chính thẻ tín dụng VPBank Z JCB và đạt tổng
+                            doanh số giao dịch từ 2 triệu VND trở lên trong vòng 30 ngày mở thẻ.
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="box-img">
+                        <img src="../../../assets/jv1/card-shopee.png" alt="">
+                    </div>
+                    <div class="box-text">
+                        <p class="text-bold">Thẻ tín dụng VPBank Shopee</p>
+                        <p class="text">
+                            1. Shopee Platinum:
+                        </p>
+                        <p class="text">
+                            Tặng quà chào mừng là Shopee E-voucher trị giá 200,000 VND cho KH mở thẻ tín dụng Shopee
+                            Platinum và đạt tổng doanh số chi tiêu 1 triệu VND trở lên trong vòng 30 ngày từ khi mở thẻ.
+                        </p>
+                        <p class="text">
+                            2. Super Shopee Platinum:
+                        </p>
+                        <p class="text">
+                            Tặng quà chào mừng là Shopee E-voucher trị giá 400,000 VND cho KH mở thẻ tín dụng Super
+                            Shopee Platinum và đạt tổng doanh số chi tiêu 2 triệu VND trở lên trong vòng 30 ngày từ khi
+                            mở thẻ
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="box-img">
+                        <img src="../../../assets/jv1/card-lady.png" alt="">
+                    </div>
+                    <div class="box-text">
+                        <p class="text-bold">Thẻ tín dụng VPBank Lady MasterCard</p>
+                        <p class="text">
+                            Tặng quà chào mừng trị giá 200,000 VND cho khách hàng mở thẻ tín dụng.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button (click)="openCard()">
+                    Mở thẻ ngay
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="myModal3" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <img src="../../../assets/jv1/icon-close.svg" alt="">
+                </button>
+                <h4 class="modal-title">Ưu đãi hoàn tiền</h4>
+            </div>
+            <div class="modal-body">
+                <div class="item">
+                    <div class="box-img">
+                        <img src="../../../assets/jv1/card-stepup.png" alt="">
+                    </div>
+                    <div class="box-text">
+                        <p class="text-bold">Thẻ tín dụng VPBank StepUp Mastercard</p>
+                        <p class="text">
+                            Nhóm 1: Khách hàng có tổng doanh số giao dịch từ 10 triệu/kỳ sao kê trở lên:
+                        </p>
+                        <ul>
+                            <li>Chi tiêu trực tuyến: Hoàn 15%, tối đa 600.000 VNĐ</li>
+                            <li>Chi tiêu ăn uống: Hoàn 4%, tối đa 200.000 VNĐ</li>
+                        </ul>
+                        <p class="text">
+                            Nhóm 2: Khách hàng có tổng doanh số giao dịch dưới 10 triệu/kỳ sao kê:
+                        </p>
+                        <ul>
+                            <li>
+                                Chi tiêu trực tuyến: Hoàn 6%, tối đa 300.000 VNĐ
+                            </li>
+                            <li>
+                                Chi tiêu ăn uống: Hoàn 2%, tối đa 100.000 VNĐ
+                            </li>
+                        </ul>
+                        <p class="text">
+                            Hoàn 0.1%, không giới hạn số tiền hoàn cho cả 2 nhóm
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="box-img">
+                        <img src="../../../assets/jv1/card-jcb.png" alt="">
+                    </div>
+                    <div class="box-text">
+                        <p class="text-bold">Thẻ tín dụng VPBank Z JCB</p>
+                        <ul>
+                            <li>Hoàn 10% giao dịch Ăn uống, tối đa 200,000 VNĐ</li>
+                            <li>Hoàn 10% cho giao dịch Giải trí, Fitness, tối đa 200,000 VNĐ</li>
+                            <li>Hoàn 10% cho các giao dịch Gọi xe, Đặt đồ ăn, tối đa 100,000 VNĐ</li>
+                        </ul>
+                        <p class="text">
+                            Áp dụng cho Khách hàng có tổng doanh số giao dịch từ 4 triệu/kỳ sao kê trở lên
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="box-img">
+                        <img src="../../../assets/jv1/card-shopee.png" alt="">
+                    </div>
+                    <div class="box-text">
+                        <p class="text-bold">Thẻ tín dụng VPBank Shopee</p>
+                        <p class="text">
+                            1. Shopee Platinum:
+                        </p>
+                        <ul>
+                            <li>Hoàn tiền 6% giao dịch chi tiêu tại Shopee và ShopeeFood. Hoàn tối đa: 250,000
+                                VNĐ/tháng.</li>
+                            <li>Hoàn tiền 1% giao dịch chi tiêu ăn uống, siêu thị (Co.op, Big C, Lotte Mart, Winmart),
+                                Di chuyển (Grab,Be). Hoàn tối đa: 150,000đ VNĐ/tháng.</li>
+                            <li>Hoàn tiền 0.1% cho các giao dịch chi tiêu khác. Không giới hạn số tiền được hoàn.</li>
+                        </ul>
+                        <p class="text">
+                            2. Super Shopee Platinum:
+                        </p>
+                        <ul>
+                            <li>Hoàn tiền 10% giao dịch chi tiêu tại Shopee và ShopeeFood. Hoàn tối đa: 400,000
+                                VNĐ/tháng.</li>
+                            <li>Hoàn tiền 2% giao dịch chi tiêu ăn uống, siêu thị (Co.op, Big C, Lotte Mart, Winmart),
+                                Di chuyển (Grab,Be). Hoàn tối đa: 200,000đ VNĐ/tháng.</li>
+                            <li>Hoàn tiền 0.1% cho các giao dịch chi tiêu khác. Không giới hạn số tiền được hoàn.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="box-img">
+                        <img src="../../../assets/jv1/card-lady.png" alt="">
+                    </div>
+                    <div class="box-text">
+                        <p class="text-bold">Thẻ tín dụng VPBank Lady MasterCard</p>
+                        <p class="text">
+                            Nhóm 1: Khách hàng chi tiêu từ 15 triệu/kỳ sao kê:
+                        </p>
+                        <ul>
+                            <li>Chi tiêu bảo hiểm trực tuyến: Hoàn 15%, tối đa 300.000 VNĐ</li>
+                            <li>Chi tiêu giáo dục: Hoàn 15%, tối đa 200.000 VNĐ</li>
+                            <li>Chi tiêu chăm sóc sắc đẹp/ Y tế: Hoàn 10%, tối đa 300.000 VNĐ</li>
+                            <li>Chi tiêu siêu thị: Hoàn 5%, tối đa 200.000 VNĐ</li>
+                        </ul>
+                        <p class="text">
+                            Nhóm 2: Khách hàng có tổng doanh số giao dịch dưới 15 triệu/kỳ sao kê:
+                        </p>
+                        <ul>
+                            <li>Chi tiêu bảo hiểm trực tuyến (*): Hoàn 7.5%, tối đa 150.000 VNĐ</li>
+                            <li>Chi tiêu giáo dục: Hoàn 7.5%, tối đa 100.000 VNĐ</li>
+                            <li>Chi tiêu chăm sóc sắc đẹp/ Y tế (*): Hoàn 5%, tối đa 150.000 VNĐ</li>
+                            <li>Chi tiêu siêu thị: Hoàn 2.5%, tối đa 100.000 VNĐ</li>
+                        </ul>
+                        <p class="text">
+                            * Các chi tiêu còn lại cho cả 2 nhóm: Hoàn 0.1%, không giới hạn số tiền hoàn
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="box-img">
+                        <img src="../../../assets/jv1/card-mc2.png" alt="">
+                    </div>
+                    <div class="box-text">
+                        <p class="text-bold">Thẻ tín dụng VPBank MC2 MasterCard</p>
+                        <ul>
+                            <li>1.000 VNĐ = 6 điểm cho chi tiêu tại siêu thị.</li>
+                            <li>1.000 VNĐ = 3 điểm cho các giao dịch còn lại. </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="box-img">
+                        <img src="../../../assets/jv1/card-cashback.png" alt="">
+                    </div>
+                    <div class="box-text">
+                        <p class="text-bold">Thẻ tín dụng VPBank Platinum Cashback</p>
+                        <ul>
+                            <li>Hoàn 0,5%: chi tiêu 0 - 30 triệu VNĐ/kỳ sao kê. </li>
+                            <li>Hoàn 1%: chi tiêu 30 - 90 triệu VNĐ/kỳ sao kê. </li>
+                            <li>Hoàn 2%: chi tiêu 90 - 120 triệu VNĐ/kỳ sao kê.</li>
+                            <li>Hoàn 3%: chi tiêu từ 120 triệu trở lên/ kỳ sao kê.</li>
+                            <li>Doanh số giao dịch ngoại tệ được nhân đôi. </li>
+                            <li>Hoàn tối đa 2 triệu VND/ kỳ sao kê.</li>
+                            <li>Tổng chi tiêu tối thiểu hoàn tiền: 10 triệu VNĐ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button (click)="openCard()">
+                    Mở thẻ ngay
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="myModal4" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <img src="../../../assets/jv1/icon-close.svg" alt="">
+                </button>
+                <h4 class="modal-title">Miễn phí thường niên</h4>
+            </div>
+            <div class="modal-body">
+                <div class="item">
+                    <div class="box-img">
+                        <img src="../../../assets/jv1/card-stepup.png" alt="">
+                    </div>
+                    <div class="box-text">
+                        <p class="text-bold">Thẻ tín dụng VPBank StepUp Mastercard</p>
+                        <p class="text">
+                            Miễn phí năm đầu tiên cho thẻ chính khi thẻ chính có từ 3 giao dịch chi tiêu trong vòng 30
+                            ngày đầu sau khi mở thẻ (mỗi giao dịch từ 300.000 VNĐ).
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="box-img">
+                        <img src="../../../assets/jv1/card-jcb.png" alt="">
+                    </div>
+                    <div class="box-text">
+                        <p class="text-bold">Thẻ tín dụng VPBank Z JCB</p>
+                        <ul>
+                            <li>Miễn phí năm đầu tiên cho thẻ chính khi thẻ chính có từ 3 giao dịch chi tiêu trong vòng
+                                30 ngày đầu sau khi mở thẻ (mỗi giao dịch từ 200.000 VNĐ).</li>
+                            <li>Năm tiếp theo cho thẻ chính nếu có tổng chi tiêu của cả thẻ chính và thẻ phụ trong năm
+                                hiện tại đạt từ 80 triệu đồng.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="box-img">
+                        <img src="../../../assets/jv1/card-shopee.png" alt="">
+                    </div>
+                    <div class="box-text">
+                        <p class="text-bold">Thẻ tín dụng VPBank Shopee & Super<br>Shopee Platinum</p>
+                        <ul>
+                            <li>Miễn phí thường niên năm đầu tiên (áp dụng cho cả thẻ chính và thẻ phụ)</li>
+                            <li>Miễn phí thường niên năm tiếp theo cho chủ thẻ chính nếu tổng doanh số giao dịch của thẻ
+                                chính và thẻ phụ trong năm liền trước đạt 50 triệu VND</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="box-img">
+                        <img src="../../../assets/jv1/card-lady.png" alt="">
+                    </div>
+                    <div class="box-text">
+                        <p class="text-bold">Thẻ tín dụng VPBank Lady MasterCard</p>
+                        <p class="text">
+                            Miễn phí năm đầu tiên cho thẻ chính khi thẻ chính có từ 3 giao dịch chi tiêu trong vòng 30
+                            ngày đầu sau khi mở thẻ (mỗi giao dịch từ 300.000 VNĐ).
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="box-img">
+                        <img src="../../../assets/jv1/card-mc2.png" alt="">
+                    </div>
+                    <div class="box-text">
+                        <p class="text-bold">Thẻ tín dụng VPBank MC2 MasterCard</p>
+                        <p class="text">
+                            Miễn phí thường niên năm đầu tiên (áp dụng cho cả thẻ chính và thẻ phụ)
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="box-img">
+                        <img src="../../../assets/jv1/card-cashback.png" alt="">
+                    </div>
+                    <div class="box-text">
+                        <p class="text-bold">Thẻ tín dụng VPBank Platinum Cashback</p>
+                        <ul>
+                            <li>Miễn phí năm đầu tiên cho thẻ chính nếu thẻ chính có phát sinh giao dịch chi tiêu tối
+                                thiểu 2 triệu VNĐ trong vòng 30 ngày kể từ ngày mở thẻ.</li>
+                            <li>Miễn phí thường niên năm đầu tiên cho thẻ phụ.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button (click)="openCard()">
+                    Mở thẻ ngay
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div id="myModal5" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <img src="../../../assets/jv1/icon-close.svg" alt="">
+                </button>
+                <h4 class="modal-title">Ưu đãi trải góp</h4>
+            </div>
+            <div class="modal-body">
+                <div class="item">
+                    <div class="box-text">
+                        <p class="text-bold">Chương trình 1: Trả góp 0% lãi suất</p>
+                        <ul>
+                            <li>Trả góp tại hơn 150 đối tác trên toàn quốc: Nguyễn Kim, Điện máy Chợ Lớn, Samsung…</li>
+                            <li>Ưu đãi trả góp với tất cả các giao dịch chi tiêu từ 3 triệu đồng</li>
+                            <li>Mua hàng và thanh toán thành nhiều lần với mức lãi suất ưu đãi 0%</li>
+                            <li>Không giới hạn số lần mua trả góp của 1 khách hàng trong 1 kỳ sao kê</li>
+                            <li>Thủ tục đăng ký đơn giản và nhanh chóng</li>
+                            <li>Kỳ hạn trả góp: 03, 06, 09, 12 tháng</li>
+                            <li>Giá trị giao dịch tối thiểu: 3.000.000 VNĐ</li>
+                            <li>Đăng ký trực tiếp tại cửa hàng, website đối tác</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="box-text">
+                        <p class="text-bold">Chương trình 2: Trả góp giao dịch mọi nơi</p>
+                        <ul>
+                            <li>Quý khách có thể tối ưu hóa khoản thanh toán hàng tháng của mình bằng cách chia nhỏ
+                                khoản thanh toán kéo dài đến 36 tháng.</li>
+                            <li>Lãi suất: Từ 1.5%/tháng (*) Lãi suất khác nhau tùy từng hạng thẻ tín dụng.</li>
+                            <li>Kỳ hạn trả góp: Từ 3 – 36 tháng</li>
+                            <li>Giá trị giao dịch tối thiểu: 3.000.000 VNĐ</li>
+                            <li>Áp dụng cho các giao dịch tại các điểm không phải đối tác VPBank.</li>
+                            <li>Không giới hạn số lần mua trả góp của 1 khách hàng trong 1 kỳ sao kê</li>
+                            <li>Áp dụng tại bất cứ đâu bạn muốn</li>
+                            <li>Đăng ký Online tại VPBank NEO hoặc gọi điện lên tổng đài CSKH 24/7: 1900 54 54 15</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="box-text">
+                        <p class="text-bold">Chương trình 3: Trả góp toàn bộ dư nợ</p>
+                        <ul>
+                            <li>Quý khách có thể tối ưu hóa khoản thanh toán hàng tháng của mình bằng cách chia nhỏ
+                                khoản thanh toán kéo dài đến 36 tháng.</li>
+                            <li>Không áp lực trả nợ thẻ tín dụng khi đến kì sao kê</li>
+                            <li>Không giới hạn số lần trả góp của 1 khách hàng trong 1 kỳ sao kê</li>
+                            <li>Thủ tục đăng ký đơn giản và nhanh chóng</li>
+                            <li>Lãi suất trả góp hấp dẫn từ 0.8%/tháng (*) Lãi suất áp dụng khác nhau tùy điều kiện
+                                khách hàng</li>
+                            <li>Kỳ hạn trả góp: Từ 24 – 48 tháng</li>
+                            <li>Giá trị trả góp tối thiểu: 9.000.000 VNĐ</li>
+                            <li>Đăng ký Online tại VPBank NEO hoặc gọi điện lên tổng đài CSKH 24/7: 1900 54 54 15</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button (click)="openCard()">
+                    Mở thẻ ngay
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="myModal6" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <img src="../../../assets/jv1/icon-close.svg" alt="">
+                </button>
+                <h4 class="modal-title">Ưu đãi từ các đối tác</h4>
+            </div>
+            <div class="modal-body">
+                <div class="item">
+                    <div class="box-img">
+                        <img src="../../../assets/jv1/uu-dai1.png" alt="">
+                    </div>
+                    <div class="box-text">
+                        <p class="text-bold">Ưu đãi dành cho mua sắm</p>
+                        <ul>
+                            <li>Các thương hiệu thời trang Pantio, Owen, Sunfly, Winny, Orchard, Zara, Massimo Dutti,
+                                Pull&Bear, Stradivarius...</li>
+                            <li>Vincom: Hoàn 100,000đ cho hóa đơn từ 800,000đ (25/11/2023 – 29/02/2024)</li>
+                            <li>Takashimaya: Hoàn 100,000đ cho hóa đơn từ 500,000đ 22/12/2023 – 31/01/2024</li>
+                            <li>Lotte Mart: Hoàn 100,000đ cho hóa đơn từ 800,000đ 23/12/2023 – 29/02/2024</li>
+                            <li>Aeon Mall: Giảm 15% tối đa 100,000đ (01/01/2024 – 29/02/2024)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="box-img">
+                        <img src="../../../assets/jv1/uu-dai2.png" alt="">
+                    </div>
+                    <div class="box-text">
+                        <p class="text-bold">Ưu đãi dành giải trí và du lịch</p>
+                        <ul>
+                            <li>Từ các thương hiệu Booking.com, Baysieure.com, Jaya Travel, Novotel Nha Trang,...</li>
+                            <li>Hoàn 50% phí chuyển đổi ngoại tệ cho giao dịch chi tiêu nước ngoài qua cổng thanh toán
+                                POS tối thiểu từ 2,000,000 VNĐ</li>
+                            <li>Mua 02 vé xem phim trên ứng dụng Lotte Cinema hoặc website với giá ưu đãi 90.000 VNĐ khi
+                                thanh toán bằng thẻ tín dụng VPBank từ thứ 2 đến thứ 6 (11/12/2023 – 09/02/2024).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="box-img">
+                        <img src="../../../assets/jv1/uu-dai3.png" alt="">
+                    </div>
+                    <div class="box-text">
+                        <p class="text-bold">Ưu đãi dành cho ẩm thực ăn uống</p>
+                        <ul>
+                            <li>Các nhà hàng COCA, Thái Blah Blah, Mamma Mia, Chickita, Thái Market, Opus Saigon...</li>
+                            <li>Chickita: ưu đãi hàng ngày: giảm giá 10% (tối đa 300.000VNĐ), giảm giá 20% (tối đa
+                                300.000VNĐ) cho nhóm 3 người từ 27/11/2023 – 01/12/2023.</li>
+                            <li>MM Gastropub: giảm 15% cho hóa đơn món ăn (1/08/2023 - 30/08/2024)</li>
+                            <li>Opus Saigon: giảm 15% cho hóa đơn món ăn dành cho chủ thẻ VPBank (31/08/2023 -
+                                30/08/2024).</li>
+                            <li>Thái Market: Giảm 10% tổng giá trị hóa đơn áp dụng từ ngày 15/7/2023 đến hết 31/12/2023
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button (click)="openCard()">
+                    Mở thẻ ngay
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

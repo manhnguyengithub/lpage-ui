@@ -1,0 +1,731 @@
+<div class="my-container">
+    <header class="d-flex justify-content-between senid-header">
+        <div class="d-flex align-items-center">
+            <img class="logo-img" src="assets/svg/logo.svg" alt="logo" />
+        </div>
+        <button class="open-credit-card" (click)="openCard()">
+            Mở thẻ ngay
+        </button>
+    </header>
+    <div class="content-container">
+        <div class="row content-hero-banner">
+            <img class="hero-banner" [src]="imgHero" alt="hero">
+            <div class="content-hero-banner__item">
+                <p class=" d-flex flex-column">
+                    <span>Mở thẻ tín dụng</span>
+                    <span>dùng được ngay</span>
+                </p>
+                <!--                <p class="mobile d-flex flex-column">-->
+                <!--                    <span>Mở thẻ tín</span>-->
+                <!--                    <span>dụng dùng</span>-->
+                <!--                    <span>được ngay</span>-->
+                <!--                </p>-->
+                <div>Hạn mức lên đến 200 triệu đồng</div>
+                <button class="mt-3 banner-btn" (click)="openCard()">
+                    Mở thẻ ngay
+                    <img src="assets/Vector-white.png" alt="continue-icon">
+                </button>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-between feature-container">
+            <div class="feature-content">
+                <img src="/assets/internet-icon.png" alt="interner-icon" />
+                <p class="d-flex flex-column">
+                    <span>Mở thẻ Online,</span>
+                    <span>chỉ với CCCD</span>
+                </p>
+            </div>
+            <div class="feature-content">
+                <img src="/assets/money-icon.png" alt="interner-icon" />
+                <p class="d-flex flex-column">
+                    <span>Hoàn tiền</span>
+                    <span>lên đến 10%</span>
+                </p>
+            </div>
+            <div class="feature-content">
+                <img src="/assets/card-icon.png" alt="interner-icon" />
+                <p class="d-flex flex-column">
+                    <span>Sử dụng ngay sau</span>
+                    <span>10 phút đăng ký</span>
+                </p>
+            </div>
+            <div class="feature-content">
+                <img src="/assets/cash-icon.png" alt="interner-icon" />
+                <p class="d-flex flex-column">
+                    <span>Miễn phí</span>
+                    <span>thường niên</span>
+                </p>
+            </div>
+        </div>
+        <div class="keen-slider_one d-flex align-items-center" #sliderRefOne>
+            <div *ngIf="laptopScreen" class="laptop-keen keen-slider__slide d-flex justify-content-around">
+                <img class="keen-slider__img" src="assets/union.png" alt="union-icon">
+                <p>Nhanh chóng</p>
+                <img class="keen-slider__img" src="assets/union.png" alt="union-icon">
+                <p>Tiện lợi</p>
+                <img class="keen-slider__img" src="assets/union.png" alt="union-icon">
+                <p>Thẻ tín dụng</p>
+                <img class="keen-slider__img" src="assets/union.png" alt="union-icon">
+                <p>Tiện lợi</p>
+            </div>
+            <div *ngIf="laptopScreen" class="laptop-keen keen-slider__slide d-flex justify-content-around">
+                <img class="keen-slider__img" src="assets/union.png" alt="union-icon">
+                <p>Nhanh chóng</p>
+                <img class="keen-slider__img" src="assets/union.png" alt="union-icon">
+                <p>Tiện lợi</p>
+                <img class="keen-slider__img" src="assets/union.png" alt="union-icon">
+                <p>Thẻ tín dụng</p>
+                <img class="keen-slider__img" src="assets/union.png" alt="union-icon">
+                <p>Tiện lợi</p>
+            </div>
+            <div *ngIf="bigScreen" class="big-desktop-keen keen-slider__slide d-flex">
+                <img class="keen-slider__img" src="assets/union.png" alt="union-icon">
+                <p>Nhanh chóng</p>
+                <img class="keen-slider__img" src="assets/union.png" alt="union-icon">
+                <p>Tiện lợi</p>
+                <img class="keen-slider__img" src="assets/union.png" alt="union-icon">
+                <p>Thẻ tín dụng</p>
+                <img class="keen-slider__img" src="assets/union.png" alt="union-icon">
+                <p>Nhanh chóng</p>
+                <img class="keen-slider__img" src="assets/union.png" alt="union-icon">
+                <p>Tiện lợi</p>
+                <img class="keen-slider__img" src="assets/union.png" alt="union-icon">
+                <p>Thẻ tín dụng</p>
+            </div>
+            <div *ngIf="bigScreen" class="big-desktop-keen keen-slider__slide d-flex">
+                <img class="keen-slider__img" src="assets/union.png" alt="union-icon">
+                <p>Nhanh chóng</p>
+                <img class="keen-slider__img" src="assets/union.png" alt="union-icon">
+                <p>Tiện lợi</p>
+                <img class="keen-slider__img" src="assets/union.png" alt="union-icon">
+                <p>Thẻ tín dụng</p>
+                <img class="keen-slider__img" src="assets/union.png" alt="union-icon">
+                <p>Nhanh chóng</p>
+                <img class="keen-slider__img" src="assets/union.png" alt="union-icon">
+                <p>Tiện lợi</p>
+                <img class="keen-slider__img" src="assets/union.png" alt="union-icon">
+                <p>Thẻ tín dụng</p>
+            </div>
+            <div *ngIf="mobileScreen" class="keen-slider__slide d-flex justify-content-around">
+                <img class="keen-slider__img" src="assets/union.png" alt="union-icon">
+                <p>Nhanh chóng</p>
+                <img class="keen-slider__img" src="assets/union.png" alt="union-icon">
+                <p>Tiện lợi</p>
+                <img class="keen-slider__img" src="assets/union.png" alt="union-icon">
+                <p>Thẻ tín dụng</p>
+            </div>
+            <div *ngIf="mobileScreen" class="keen-slider__slide d-flex justify-content-around">
+                <img class="keen-slider__img" src="assets/union.png" alt="union-icon">
+                <p>Nhanh chóng</p>
+                <img class="keen-slider__img" src="assets/union.png" alt="union-icon">
+                <p>Tiện lợi</p>
+                <img class="keen-slider__img" src="assets/union.png" alt="union-icon">
+                <p>Thẻ tín dụng</p>
+            </div>
+        </div>
+        <div class="promote-owner-container d-flex flex-column align-items-center pt-5">
+            <p class="bigger-header d-flex flex-column">
+                <span>Ưu đãi cho chủ thẻ</span>
+                <span>VPBank tại SenID</span>
+            </p>
+            <p class="smaller-header">Chương trình khuyến mãi thêm cho chủ thẻ VPBank tháng 11/2023</p>
+            <div class="row promote-owner-container__content mb-5">
+                <div class="promote-owner-container__item item_1">
+                    <p class="small-title d-flex flex-column">
+                        <span>Thả ga chi tiêu, <br>hoàn tiền cực đã</span>
+                    </p>
+                    <p class="due-date">Từ 1/11/2023 - 31/12/2023</p>
+                    <div class="d-flex detail">
+                        <p class="d-flex flex-column">
+                            <span class="return">Hoàn</span>
+                            <span class="return-money">200.000đ</span>
+                        </p>
+                        <p class="d-flex flex-column">
+                            <span class="return">Khi chi tiêu từ</span>
+                            <span class="return-money">4.000.000đ</span>
+                        </p>
+                    </div>
+                    <div class="d-flex detail mt-2 mb-2">
+                        <p class="d-flex flex-column">
+                            <span class="return">Hoàn</span>
+                            <span class="return-money">500.000đ</span>
+                        </p>
+                        <p class="d-flex flex-column">
+                            <span class="return">Khi chi tiêu từ</span>
+                            <span class="return-money">9.000.000đ</span>
+                        </p>
+                    </div>
+                    <p class="limit-quantity pb-3">Số lượng có hạn</p>
+                    <button class="research-more" (click)="returnMoney()">
+                        Tìm hiểu thêm
+                        <img src="assets/continue-icon.png" alt="continue-icon">
+                    </button>
+                </div>
+                <div class="promote-owner-container__item item_2">
+                    <p class="desktop small-title d-flex flex-column">
+                        <span>Giảm 1.500.000 đồng với sản</span>
+                        <span>phẩm Iphone 15 series</span>
+                    </p>
+                    <p class="mobile small-title d-flex flex-column">
+                        <span>Giảm 1.500.000</span>
+                        <span>đồng với sản phẩm</span>
+                        <span>Iphone 15 series</span>
+                    </p>
+                    <p class="due-date">Từ 29/09/2023 - 31/12/2023</p>
+                    <div class="d-flex detail mt-2 mb-2">
+                        <p class="d-flex flex-column">
+                            <span class="return">Giảm</span>
+                            <span class="return-money">1.500.000đ</span>
+                        </p>
+                        <p class="d-flex flex-column">
+                            <span class="return">Khi mua</span>
+                            <span class="return-money">iPhone 15 Series</span>
+                        </p>
+                    </div>
+                    <p class="limit-quantity pb-3">Thanh toán bằng thẻ tín dụng VPBank tại FPT shop, Cellphones, Hoàng
+                        Hà
+                        Mobile.</p>
+                    <button class="research-more" (click)="openIphone()">
+                        Tìm hiểu thêm
+                        <img src="assets/continue-icon.png" alt="continue-icon">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="vp-bank-card-container d-flex flex-column align-items-center pb-5">
+            <p class="title d-flex flex-column pb-3">
+                <span>Thẻ tín dụng VPBank</span>
+                <span>đang có trên SenID</span>
+            </p>
+            <p class="comforable__title">Thoải mái <b>lựa chọn</b> loại thẻ <b>theo nhu cầu</b> của bạn chỉ với một lần
+                đăng ký</p>
+                
+                <div class="grid-container">
+                    <!-- Column 1 -->
+                    <div class="grid-item">
+                        <img class="img-card" src="../assets/card1.jpg" alt="">
+                        <div class="box-text">
+                            <h2>Thẻ tín dụng VPBank Z JCB</h2>
+                            <ul>
+                                <li>Hạn mức đến 500 triệu đồng</li>
+                                <li>Hoàn 10% giao dịch Ăn uống</li>
+                                <li>Hoàn 10% giao dịch Giải trí, Fitness</li>
+                                <li>Hoàn 10% các giao dịch Gọi xe, Đặt đồ ăn</li>
+                                <li>Hoàn tiền 300.000 đồng trong tháng đầu</li>
+                                <li>Miễn phí thường niên</li>
+                            </ul>
+                        </div>
+                        <button class="btn-card" data-toggle="modal" data-target="#myModal1">
+                            Tìm hiểu thêm
+                            <img src="../assets/arrow-right-black.svg" alt="">
+                        </button>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div class="grid-item">
+                        <img class="img-card" src="../assets/card2.png" alt="">
+                        <div class="box-text">
+                            <h2>Thẻ tín dụng VPBank StepUp Mastercard</h2>
+                            <ul>
+                                <li>Hạn mức đến 500 triệu đồng</li>
+                                <li>Hoàn đến 15% giao dịch trực tuyến</li>
+                                <li>Hoàn đến 4% giao dịch ăn uống</li>
+                                <li>Hoàn tiền 300.000 đồng trong tháng đầu</li>
+                                <li>Giảm đến 30% tại hơn 5.000 cửa hàng</li>
+                                <li>Miễn phí thường niên năm đầu tiên</li>
+                            </ul>
+                        </div>
+                        <button class="btn-card" data-toggle="modal" data-target="#myModal2">
+                            Tìm hiểu thêm
+                            <img src="../assets/arrow-right-black.svg" alt="">
+                        </button>
+                    </div>
+
+
+                </div>
+                <div class="grid-container">
+                    <!-- Column 3 -->
+                    <div class="grid-item">
+                        <img class="img-card" src="../assets/card3.png" alt="">
+                        <div class="box-text">
+                            <h2>Thẻ tín dụng VPBank MC2 MasterCard</h2>
+                            <ul>
+                                <li>Hạn mức đến 70 triệu đồng</li>
+                                <li>Tích điểm cao, lên tới 6 điểm/1.000 đồng</li>
+                                <li>Ưu đãi đổi quà hấp dẫn từ các đối tác </li>
+                                <li>Ưu đãi trả góp tại hơn 150 đối tác</li>
+                                <li>Giảm đến 30% tại hơn 5.000 cửa hàng</li>
+                                <li>Miễn phí thường niên năm đầu tiên</li>
+                            </ul>
+                            <button class="btn-card" data-toggle="modal" data-target="#myModal3">
+                                Tìm hiểu thêm
+                                <img src="../assets/arrow-right-black.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <img class="img-card" src="../assets/card4.png" alt="">
+                        <div class="box-text">
+                            <h2>Thẻ tín dụng VNA Platinum MasterCard</h2>
+                            <ul>
+                                <li>Hạn mức đến 1 tỷ đồng</li>
+                                <li>Tích luỹ dặm bay, 1.5 dặm/ 26.000 đồng</li>
+                                <li>Hoàn ngay 1 triệu đồng</li>
+                                <li>Tặng 1.000 dặm Bông Sen Vàng</li>
+                                <li>Giảm đến 30% tại hơn 5.000 cửa hàng</li>
+                                <li>Miễn phí thường niên năm đầu tiên</li>
+                            </ul>
+                            <button class="btn-card" data-toggle="modal" data-target="#myModal4">
+                                Tìm hiểu thêm
+                                <img src="../assets/arrow-right-black.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            
+            <!-- <div class="vp-bank-card-container__items d-flex">
+                <div class="vp-bank-card-container__item">
+                    <img class="card-img" src="assets/z-card.png" alt="z-card">
+                    <p class="d-flex flex-column small-title pt-2">
+                        <span>Thẻ tín dụng</span>
+                        <span>VPBank Z JCB</span>
+                    </p>
+                    <ul>
+                        <li>Hạn mức đến 500 triệu đồng</li>
+                        <li>Hoàn 10% giao dịch Ăn uống</li>
+                        <li>Hoàn 10% giao dịch Giải trí, Fitness</li>
+                        <li>Hoàn 10% các giao dịch Gọi xe, Đặt đồ ăn</li>
+                        <li>Hoàn tiền 300.000 đồng trong tháng đầu</li>
+                        <li>Miễn phí thường niên</li>
+                    </ul>
+                    <button class="research-more card-button" (click)="openZCard()">
+                        Tìm hiểu thêm
+                        <img src="assets/continue-icon.png" alt="continue-icon">
+                    </button>
+                </div>
+                <div class="vp-bank-card-container__item">
+                    <img class="card-img" src="assets/shopee-card.png" alt="shopee-card">
+                    <p class="d-flex flex-column small-title pt-2">
+                        <span>Thẻ tín dụng</span>
+                        <span>VPBank Shopee Platinum</span>
+                    </p>
+                    <ul>
+                        <li>Hạn mức đến 100 triệu đồng</li>
+                        <li>Hoàn tiền 6% chi tiêu tại Shopee, Shopee Food</li>
+                        <li>Hoàn tiền 1% chi tiêu Ăn uống, siêu thị</li>
+                        <li>Hoàn thêm không giới hạn 0.1%(*)</li>
+                        <li>Tặng Shopee E-voucher 200.000 đồng</li>
+                        <li>Miễn phí thường niên</li>
+                    </ul>
+                    <button class="research-more card-button" (click)="openShopeeCard()">
+                        Tìm hiểu thêm
+                        <img src="assets/continue-icon.png" alt="continue-icon">
+                    </button>
+                </div>
+                <div class="vp-bank-card-container__item">
+                    <img class="card-img" src="assets/black-card.png" alt="black-card">
+                    <p class="d-flex flex-column small-title pt-2">
+                        <span>Thẻ tín dụng</span>
+                        <span>Platinum Cash Back</span>
+                    </p>
+                    <ul>
+                        <li>Hạn mức đến 1 tỷ đồng</li>
+                        <li>Hoàn tiền lên đến 3% cho mọi giao dịch</li>
+                        <li>Hoàn tiền đến 2 triệu đồng/ 1 kỳ sao kê</li>
+                        <li>Miễn lãi 45 ngày</li>
+                        <li>Miễn phí thường niên thẻ chính, thẻ phụ</li>
+                    </ul>
+                    <button class="research-more card-button" (click)="openBlackCard()">
+                        Tìm hiểu thêm
+                        <img src="assets/continue-icon.png" alt="continue-icon">
+                    </button>
+                </div>
+                
+            </div> -->
+        </div>
+        <div class="introduce-open-card d-flex flex-column align-items-center pb-5">
+            <p class="big-title">5 bước mở thẻ</p>
+            <p class="small-title">Không yêu cầu giấy tờ chứng minh thu nhập, nhận kết quả ngay tức thì</p>
+            <div class="introduce-open-card__step step_1 d-flex justify-content-around">
+                <div class="w-100">
+                    <p class="img-number">01</p>
+                    <p class="d-flex flex-column">
+                        <span>Nhập thông tin</span>
+                        <span>mở thẻ</span>
+                    </p>
+                </div>
+                <img class="img-phone" src="assets/step_1.png" alt="step_1">
+            </div>
+            <div class="introduce-open-card__step step_2 d-flex justify-content-around">
+                <div class="w-100">
+                    <p class="img-number">02</p>
+                    <p class="d-flex flex-column">
+                        <span>Định danh với</span>
+                        <span>CCCD</span>
+                    </p>
+                </div>
+                <img class="img-phone" src="assets/step_2.png" alt="step_2">
+            </div>
+            <div class="introduce-open-card__step step_3 d-flex justify-content-around">
+                <div class="w-100">
+                    <p class="img-number">03</p>
+                    <p class="d-flex flex-column">
+                        <span>Xác thực</span>
+                        <span>khuôn mặt</span>
+                    </p>
+                </div>
+                <img class="img-phone" src="assets/step_3.png" alt="step_3">
+            </div>
+            <div class="introduce-open-card__step step_4 d-flex justify-content-around">
+                <div class="w-100">
+                    <p class="img-number">04</p>
+                    <p class="d-flex flex-column">
+                        <span>Ngân hàng</span>
+                        <span>Phê duyệt thẻ</span>
+                    </p>
+                </div>
+                <img class="img-phone" src="assets/step_4.png" alt="step_4">
+            </div>
+            <div class="introduce-open-card__step step_5 d-flex justify-content-around">
+                <div class="w-100">
+                    <p class="img-number">05</p>
+                    <p class="d-flex flex-column">
+                        <span>Kích hoạt thẻ</span>
+                        <span>& Chi tiêu</span>
+                    </p>
+                </div>
+                <img class="img-phone" src="assets/step_5.png" alt="step_5">
+            </div>
+        </div>
+        <div class="partner d-flex justify-content-center pb-3">
+            <p class="d-flex flex-column">
+                <span class="promotion">Hàng ngàn ưu đãi từ đối tác</span>
+            </p>
+        </div>
+        <div class="keen-slider_two d-flex align-items-center pb-4" #sliderRefTwo>
+            <div *ngIf="!mobileScreen" class="keen-slider__slide d-flex justify-content-around">
+                <img class="" src="assets/fpt.png" alt="fpt">
+                <img class="" src="assets/elite.png" alt="elite">
+                <img class="" src="assets/novotel.png" alt="novotel">
+                <img class="" src="assets/didongviet.png" alt="didongviet">
+                <img class="" src="assets/furama.png" alt="furama">
+                <img class="" src="assets/eleven.png" alt="eleven">
+                <img class="" src="assets/cellphone.png" alt="cellphone">
+                <img class="" src="assets/gojek.png" alt="gojek">
+                <img class="" src="assets/shopee.png" alt="shopee">
+                <img class="" src="assets/elite.png" alt="elite">
+            </div>
+            <div *ngIf="!mobileScreen" class="keen-slider__slide d-flex justify-content-around">
+                <img class="" src="assets/fpt.png" alt="fpt">
+                <img class="" src="assets/elite.png" alt="elite">
+                <img class="" src="assets/novotel.png" alt="novotel">
+                <img class="" src="assets/didongviet.png" alt="didongviet">
+                <img class="" src="assets/furama.png" alt="furama">
+                <img class="" src="assets/eleven.png" alt="eleven">
+                <img class="" src="assets/cellphone.png" alt="cellphone">
+                <img class="" src="assets/gojek.png" alt="gojek">
+                <img class="" src="assets/shopee.png" alt="shopee">
+                <img class="" src="assets/elite.png" alt="elite">
+            </div>
+            <div *ngIf="mobileScreen" class="keen-slider__slide d-flex justify-content-around" style="padding: 0 10px;">
+                <img class="" src="assets/fpt.png" alt="fpt">
+                <img class="" src="assets/elite.png" alt="elite">
+                <img class="" src="assets/novotel.png" alt="novotel">
+                <img class="" src="assets/didongviet.png" alt="didongviet">
+            </div>
+            <div *ngIf="mobileScreen" class="keen-slider__slide d-flex justify-content-around">
+                <img class="" src="assets/furama.png" alt="furama">
+                <img class="" src="assets/eleven.png" alt="eleven">
+                <img class="" src="assets/cellphone.png" alt="cellphone">
+                <img class="" src="assets/gojek.png" alt="gojek">
+                <img class="" src="assets/shopee.png" alt="shopee">
+            </div>
+        </div>
+        <div *ngIf="mobileScreen" class="keen-slider_two d-flex align-items-center pb-5 justify-content-between"
+             #sliderRefThree>
+            <div class="keen-slider__slide d-flex justify-content-around" style="padding: 0 10px;">
+                <img class="" src="assets/fpt.png" alt="fpt">
+                <img class="" src="assets/elite.png" alt="elite">
+                <img class="" src="assets/novotel.png" alt="novotel">
+                <img class="" src="assets/didongviet.png" alt="didongviet">
+            </div>
+            <div class="keen-slider__slide d-flex justify-content-around">
+                <img class="" src="assets/furama.png" alt="furama">
+                <img class="" src="assets/eleven.png" alt="eleven">
+                <img class="" src="assets/cellphone.png" alt="cellphone">
+                <img class="" src="assets/gojek.png" alt="gojek">
+                <img class="" src="assets/shopee.png" alt="shopee">
+            </div>
+        </div>
+        <div class="register-now d-flex flex-column align-items-center">
+            <img class="img-union pb-3" src="assets/svg/short-logo.svg" alt="union white">
+            <p class="d-flex flex-column pb-3">
+                <span>Đăng ký dùng ngay,</span>
+                <span>hoàn tiền mê say</span>
+            </p>
+            <!--            <p class="mobile d-flex flex-column pb-3">-->
+            <!--                <span>Đăng ký dùng ngay,</span>-->
+            <!--                <span>hoàn tiền mê say</span>-->
+            <!--            </p>-->
+            <button (click)="openCard()">
+                Mở thẻ ngay
+                <img src="assets/Vector-white.png" alt="continue-icon">
+            </button>
+        </div>
+        <div class="footer pt-5 pb-5 d-flex flex-column">
+            <span>© 2023 - Bản quyền thuộc về Công ty Cổ Phần Công Nghệ Paso</span>
+            <span>Email liên hệ: cskh@senid.vn</span>
+        </div>
+    </div>
+    <div class="mobile-static-button__container" *ngIf="showFloatingButton">
+        <button class="mobile-static-button" (click)="openCard()">
+            Mở thẻ ngay
+            <img src="assets/Vector-white.png" alt="continue-icon">
+        </button>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="myModal1" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <img src="../assets/close-cirle.svg" alt="">
+                </button>
+                <h4 class="modal-title">Thẻ tín dụng Z JCB</h4>
+            </div>
+            <div class="modal-body">
+                <p class="text-bold">
+                    1. Hoàn tiền 10% cho mọi chi tiêu:
+                </p>
+                <ul>
+                    <li>
+                        Hoàn 10% cho giao dịch Ăn uống (*), tối đa 200,000 đồng.
+                    </li>
+                    <li>
+                        Hoàn 10% cho giao dịch Giải trí, Fitness (*), tối đa 200,000 đồng.
+                    </li>
+                    <li>
+                        Hoàn 10% cho các giao dịch Gọi xe, Đặt đồ ăn (*), tối đa 100,000 đồng.
+                    </li>
+                    <li>Áp dụng cho Khách hàng có tổng doanh số giao dịch từ 4 triệu/kỳ sao kê.</li>
+                </ul>
+                <p class="text-normal">
+                    * Danh mục hoàn tiền sẽ tuân theo các mã danh mục được nêu cụ thể tại thể lệ ưu đãi.
+                </p>
+                <p class="text-bold">
+                    2. Ưu đãi trả góp 0% tại mọi cửa hàng:
+                </p>
+                <ul>
+                    <li>
+                        Miễn phí chuyển đổi trả góp 0% kỳ hạn 6 tháng cho các giao dịch chi tiêu (giao dịch quẹt thẻ tại máy POS và giao dịch trực tuyến) thực hiện bằng thẻ chính trong vòng 3 tháng kể từ tháng mở thẻ;
+                    </li>
+                    <li>
+                        Áp dụng cho giao dịch từ 3.000.000 VNĐ trở lên.
+                    </li>
+                </ul>
+                <p class="text-bold">
+                    3. Quà tặng chào mừng:
+                </p>
+                <p class="text-normal">
+                    Hoàn tiền 300.000 VND cho khách hàng mở thẻ chính thẻ tín dụng VPBank Z JCB và đạt tổng doanh số giao dịch từ 2 triệu VND trở lên trong vòng 30 ngày mở thẻ.
+                </p>
+                <p class="text-bold">
+                    4. Miễn phí thường niên:
+                </p>
+                <ul>
+                    <li>
+                        Năm đầu tiên cho thẻ chính khi thẻ chính có từ 3 giao dịch chi tiêu trong vòng 30 ngày đầu sau khi mở thẻ (mỗi giao dịch từ 200.000 VNĐ).
+                    </li>
+                    <li>
+                        Năm tiếp theo cho thẻ chính nếu có tổng chi tiêu của cả thẻ chính và thẻ phụ trong năm hiện tại đạt từ 80 triệu đồng.
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button (click)="openCard()">
+                    Mở thẻ nhận ưu đãi
+                    <!-- <img src="../assets/arrow-white.svg" alt=""> -->
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="myModal2" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <img src="../assets/close-cirle.svg" alt="">
+                </button>
+                <h4 class="modal-title">Thẻ tín dụng VPBank StepUp Mastercard</h4>
+            </div>
+            <div class="modal-body">
+                <p class="text-bold">
+                    1. Ưu đãi hoàn tiền:
+                </p>
+                <p class="text-normal">Nhóm 1: Khách hàng có tổng doanh số giao dịch từ 10 triệu/kỳ sao kê trở lên:</p>
+                <ul>
+                    <li>
+                        Chi tiêu trực tuyến: Hoàn 15%, tối đa 600.000 VNĐ
+                    </li>
+                    <li>
+                        Chi tiêu ăn uống: Hoàn 4%, tối đa 200.000 VNĐ
+                    </li>
+                </ul>
+                <p class="text-normal">
+                    Nhóm 2: Khách hàng có tổng doanh số giao dịch dưới 10 triệu/kỳ sao kê:
+                </p>
+                <ul>
+                    <li>
+                        Chi tiêu trực tuyến: Hoàn 6%, tối đa 300.000 VNĐ
+                    </li>
+                    <li>
+                        Chi tiêu ăn uống: Hoàn 2%, tối đa 100.000 VNĐ
+                    </li>
+                    <li>
+                        Hoàn 0.1%, không giới hạn số tiền hoàn cho cả 2 nhóm.
+                    </li>
+                </ul>
+                <p class="text-bold">2. Ưu đãi trả góp 0% tại mọi cửa hàng:</p>
+                <ul>
+                    <li>Miễn phí chuyển đổi trả góp 0% kỳ hạn 6 tháng cho các giao dịch chi tiêu (giao dịch quẹt thẻ tại máy POS và giao dịch trực tuyến) thực hiện bằng thẻ chính trong vòng 3 tháng kể từ tháng mở thẻ;</li>
+                    <li>Áp dụng cho giao dịch từ 3.000.000 VNĐ trở lên.</li>
+                </ul>
+                <p class="text-bold">3. Quà tặng chào mừng:</p>
+                <p class="text-normal">Hoàn tiền 300.000 VNĐ cho khách hàng mở thẻ tín dụng VPBank StepUp trong khoảng thời gian triển khai chương trình và đạt tổng doanh số giao dịch từ 2 triệu VND trở lên trong 30 ngày mở thẻ.</p>
+                <p class="text-bold">4. Miễn phí thường niên:</p>
+                <p class="text-normal">Miễn phí năm đầu tiên cho thẻ chính khi thẻ chính có từ 3 giao dịch chi tiêu trong vòng 30 ngày đầu sau khi mở thẻ (mỗi giao dịch từ 300.000 VNĐ).</p>
+            </div>
+            <div class="modal-footer">
+                <button (click)="openCard()">
+                    Mở thẻ nhận ưu đãi
+                    <!-- <img src="../assets/arrow-white.svg" alt=""> -->
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="myModal3" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <img src="../assets/close-cirle.svg" alt="">
+                </button>
+                <h4 class="modal-title">Thẻ tín dụng VPBank MC2 MasterCard</h4>
+            </div>
+            <div class="modal-body">
+                <p class="text-bold">1. Tích điểm đổi quà:</p>
+                <ul>
+                    <li>
+                        1.000 VNĐ = 6 điểm cho chi tiêu siêu thị.
+                    </li>
+                    <li>
+                        1.000VNĐ = 3 điểm cho tất cả giao dịch còn lại. 
+                    </li>
+                </ul>
+                <p class="text-bold">2. Ưu đãi trả góp 0% tại mọi cửa hàng:</p>
+                <ul>
+                    <li>
+                        Trả góp tại hơn 150 đối tác trên toàn quốc: Nguyễn Kim, Điện máy Chợ Lớn, Samsung, Cellphones…
+                    </li>
+                    <li>
+                        Miễn phí chuyển đổi trả góp 0% kỳ hạn 6 tháng cho các giao dịch chi tiêu.
+                    </li>
+                    <li>
+                        Hưởng ưu đãi miễn lãi tối đa 45 ngày
+                    </li>
+                    <li>
+                        Áp dụng cho giao dịch từ 3.000.000 VNĐ trở lên.
+                    </li>
+                </ul>
+                <p class="text-bold">
+                    3. Ưu đãi tại đối tác của VPBank:
+                </p>
+                <ul>
+                    <li>
+                        Giảm giá lên đến 30% tại hơn 5.000 cửa hàng ăn uống, du lịch, mua sắm, giải trí…
+                    </li>
+                    <li>
+                        Ẩm thực: Nhà hàng COCA, Thái Blah Blah, Mamma Mia - Itali Restaurant,...
+                    </li>
+                    <li>
+                        Mua sắm: Thời trang Pantio, Owen, Sunfly, Winny, Orchard,...
+                    </li>
+                    <li>
+                        Du lịch: Booking.com, Baysieure.com - Jaya Travel, Novotel Nha Trang,...
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button (click)="openCard()">
+                    Mở thẻ nhận ưu đãi
+                    <!-- <img src="../assets/arrow-white.svg" alt=""> -->
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="myModal4" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <img src="../assets/close-cirle.svg" alt="">
+                </button>
+                <h4 class="modal-title">Thẻ tín dụng VNA Platinum MasterCard</h4>
+            </div>
+            <div class="modal-body">
+                <p class="text-bold">1. Cơ chế tích lũy dặm bay:</p>
+                <ul>
+                    <li>26.000VNĐ = 1 dặm Bông Sen Vàng khi chi tiêu bằng VNĐ</li>
+                    <li>26.000VNĐ = 1.5 dặm Bông Sen Vàng khi chi tiêu bằng ngoại tệ</li>
+                    <li>Tặng 3.000 dặm Bông Sen Vàng nếu khách hàng có tổng doanh số giao dịch hợp lệ đạt 300 triệu trong mỗi năm.</li>
+                </ul>
+                <p class="text-bold">
+                    2. Ưu đãi hoàn tiền:
+                </p>
+                <p class="text-normal">
+                    Hoàn 1 triệu đồng cho chủ thẻ mới khi chi tiêu thẻ đạt 4 triệu đồng trong vòng 30 ngày kể từ ngày mở thẻ.
+                </p>
+                <p class="text-bold">
+                    3. Quà tặng chào mừng:
+                </p>
+                <p class="text-normal">
+                    Tặng 1.000 dặm Bông Sen Vàng cho chủ thẻ mới khi chi tiêu thẻ đạt 4 triệu đồng trong vòng 30 ngày kể từ ngày mở thẻ.
+                </p>
+                <p class="text-bold">
+                    4. Miễn phí thường niên:
+                </p>
+                <ul>
+                    <li>Miễn phí thường niên năm đầu tiên cho thẻ chính nếu thẻ chính có phát sinh giao dịch chi tiêu tối thiểu 2 triệu VNĐ trong vòng 30 ngày kể từ ngày mở thẻ.</li>
+                    <li>Miễn phí thường niên năm tiếp theo cho thẻ chính nếu có tổng doanh số giao dịch của thẻ chính và thẻ phụ trong năm hiện tại đạt từ 150 triệu đồng.</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button (click)="openCard()">
+                    Mở thẻ nhận ưu đãi
+                    <!-- <img src="../assets/arrow-white.svg" alt=""> -->
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,35 @@
+.header {
+    background-color: #fff;
+    height          : 60px;
+    padding         : 18px 0;
+
+    .box-logo {
+        display        : flex;
+        align-items    : center;
+        justify-content: center;
+
+        .box-img {
+            height: 24px;
+
+            &:first-child {
+                margin-right: 26px;
+                position    : relative;
+
+                img {
+                    height: 20px;
+                }
+
+                &::after {
+                    content   : "";
+                    height    : 24px;
+                    position  : absolute;
+                    background: var(--color-border-neutral-medium, #DBDBDB);
+                    width     : 1px;
+                    right     : -13px;
+                    top       : 0;
+                    display   : inline-block;
+                }
+            }
+        }
+    }
+}

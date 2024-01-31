@@ -1,0 +1,27 @@
+<div class="paso-home">
+    <app-header-paso></app-header-paso>
+    <div class="box-notify">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="notify">
+                        <div class="text-center notify-body">
+                            <img [src]="info?.linkImg" alt="icon fail" width="128px"/>
+                            <p class="title-main success mt-3">{{info?.titleMain}}</p>
+                            <p class="title-above mx-5">{{info?.titleAbove}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <button (click)="submit()">{{info?.button}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

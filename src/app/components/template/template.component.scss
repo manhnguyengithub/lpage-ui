@@ -1,0 +1,67 @@
+.template {
+    max-width: 600px;
+    margin   : auto;
+    * {
+        font-family: 'SVN-Gilroy', sans-serif;
+    }
+
+    input::placeholder,
+    select::placeholder {
+        color: #B3B3B3;
+    }
+
+    .form-title {
+        margin-top : 20px;
+        color      : #171717;
+        font-size  : 16px;
+        font-style : normal;
+        font-weight: 600;
+        line-height: normal;
+        margin-bottom: 8px;
+    }
+
+    select {
+        height            : var(--48, 48px);
+        padding           : var(--Padding-Small, 12px) var(--Padding-Medium, 16px);
+        border-radius     : var(--corner-radius-Small, 8px);
+        background        : #FFF;
+        display           : block;
+        width             : 100%;
+        border            : 0;
+        outline           : none;
+        -webkit-appearance: none;
+        -moz-appearance   : none;
+        appearance        : none;
+        background-image  : none;
+        padding-right     : 1.5em;
+        cursor: pointer;
+        option {
+            color: red;
+        }
+    }
+    .box-select {
+        position: relative;
+        img {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+        }
+    }
+
+    input {
+        height          : 48px;
+        width           : 100%;
+        border-radius   : 8px;
+        background-color: #fff;
+        border          : 0;
+        padding         : 0 16px;
+        outline         : none;
+    }
+
+    .error-msg {
+        color     : red;
+        font-size : 12px;
+        margin-top: 8px;
+        display   : inline-block;
+    }
+}

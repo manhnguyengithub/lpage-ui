@@ -1,0 +1,43 @@
+<div class='template'>
+    <!-- <div class="item-form" *ngIf="data?.dataType === 'STRING'">
+        <p class="form-title">{{data?.name}}<span class="required">***</span></p>
+        <input type="text" [formControl]="fieldControlForm" class="w-100 input-type"
+            (change)="onChangeInput(data?.fieldKey,$event)" placeholder="" maxlength="{{data?.maxlength}}">
+        <span>{{data?.name}} {{getError(fieldControlForm)}}</span>
+    </div> -->
+    <div class="item-form current-address-container" *ngIf="data?.dataType === 'ADDRESS'"
+        [formGroup]="fieldControlForm">
+        <div class="row">
+            <div class="col-12">
+                <p class="form-title">Nơi ở hiện tại</p>
+                <div class="box-select">
+                    <select #province (click)="openBottomSheet('province', data?.fieldKey)" formControlName="provinceId"
+                        (ngModelChange)="changeProvince($event, data?.fieldKey)">
+                        <option value="" disabled selected>Chọn tỉnh</option>
+                        <option class="d-none item-province" *ngFor="let province of listProvince"
+                            [value]="province?.id">{{province?.name}}</option>
+                    </select>
+                    <img src="../../../assets/jv1/CaretDown.png" alt="">
+                </div>
+                <span class="error-msg" *ngIf="fieldControlForm.get('provinceId').hasError('required') && fieldControlForm.get('provinceId').touched">Tỉnh/Thành phố không được bỏ trống</span>
+            </div>
+            <div class="col-12" *ngIf="showDistrict">
+                <p class="form-title">Nơi ở hiện tại</p>
+                <select #district (click)="openBottomSheet('district', data?.fieldKey)" formControlName="districtId"
+                    (ngModelChange)="changeDistrict($event, data?.fieldKey)">
+                    <option value="" disabled selected hidden>Chọn quận huyện</option>
+                    <option class="d-none" *ngFor="let district of objListDistrict[data?.fieldKey]"
+                        [value]="district?.id">{{district?.name}}</option>
+                </select>
+                <span class="error-msg" *ngIf="fieldControlForm.get('districtId').hasError('required') && fieldControlForm.get('districtId').touched">Thành phố/Quận huyện không được bỏ trống</span>
+            </div>
+        </div>
+    </div>
+    <div class="item-form" *ngIf="data?.dataType === 'NUMBER'">
+        <p class="form-title">{{data?.name}}</p>
+        <input type="tel" [formControl]="fieldControlForm" appNumberOnly class="w-100 input-type"
+            [placeholder]="data?.placeholder ? data?.placeholder : ''" (paste)="onPaste($event)"
+            (change)="onChangeInput(data?.fieldKey, $event)" maxlength="{{data?.maxlength}}">
+        <span *ngIf="getError(fieldControlForm)" class="error-msg">{{data?.name}} {{getError(fieldControlForm)}}</span>
+    </div>
+</div>

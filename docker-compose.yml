@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  admin-ui:
+    image: registry.3tit.vn/base/edp/edp-ui/lpage-ui:{VERSION}
+    volumes:
+      - './env.js:/usr/share/nginx/html/env.js'
+    ports:
+      - "8010:80"
+    configs:
+        -   source: env_conf
+            target: /usr/share/nginx/html/env.js
+            mode: 0777
+    networks:
+      net:
+networks:
+  net:
+configs:
+    env_conf:
+        name: env-${SETTINGS_TIMESTAMP}.js
+        file: ./env.js
